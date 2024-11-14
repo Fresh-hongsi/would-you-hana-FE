@@ -28,6 +28,12 @@ import Seocho from './pages/LandingPage/Seocho';
 import BankerProfile from './pages/BankerProfile/Profile';
 import CommunityRegister from './pages/Community/CommunityRegister';
 
+import BankerMyPage from './pages/BankerMyPage/MyPage'; // 기본 행원 마이페이지
+import BankerMyProfile from './pages/BankerMyPage/Profile'; // 행원 프로필 페이지
+//import BankerProfileRegister from './pages/BankerMyPage/ProfileRegister'; // 행원 프로필 등록 페이지
+//import BankerProfileEdit from './pages/BankerMyPage/ProfileEdit'; // 해원 프로필 수정 페이지
+import BankerEditProfile from './pages/BankerMyPage/EditProfile'; // 행원 개인정보 수정 페이지
+
 function App() {
   return (
     <ConfigProvider
@@ -48,7 +54,15 @@ function App() {
               <Route path="likes" element={<Likes />} />
               <Route path="scrap" element={<Scrap />} />
               <Route path="edit" element={<EditProfile />} />
+    
               {/*<Route path="auth" element={<Auth />} /> */}
+            </Route>
+
+            <Route path="/banker" element={<BankerMyPage />}> {/*행원 마이페이지*/}
+              <Route path="profile" element = {<BankerMyProfile/>}/> {/*행원 프로필 조회*/}
+              {/*<Route path="profile/register" element={<BankerProfileRegister />} /> {/*행원 프로필 등록*/}
+              {/*<Route path="profile/edit" element={<BankerProfileEdit />} /> {/*행원 프로필 수정*/}
+              <Route path="edit" element={<BankerEditProfile />} /> {/*행원 개인정보 수정*/}
             </Route>
             {/* You can add other routes here as needed */}
             <Route path="/register" element={<Register />} />
